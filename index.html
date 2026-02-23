@@ -1,14 +1,198 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Travis - Blog</title>
-  <meta http-equiv="X-Frame-Options" content="DENY">
+  <title>Travis Teo — Projects</title>
+  <meta name="description" content="Projects by Travis Teo — deep dives into what I built, my contribution, and key learnings.">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>Work In Progress...</h1>
+
+  <div class="site-net">
+    <a href="https://travisteo.com"           class="sn-link">travisteo.com</a>
+    <a href="https://portfolio.travisteo.com"  class="sn-link">portfolio</a>
+    <a href="https://projects.travisteo.com"   class="sn-link current">projects</a>
+    <a href="https://resume.travisteo.com"     class="sn-link">resume</a>
+    <a href="https://writeups.travisteo.com"   class="sn-link">writeups</a>
+    <a href="https://contact.travisteo.com"    class="sn-link">contact</a>
+  </div>
+
+  <nav class="main-nav">
+    <a href="https://travisteo.com" class="nav-logo">Travis Teo</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#inquiry-helper" data-nav>Inquiry Helper</a></li>
+      <li><a href="#frisbee"        data-nav>CCA Site</a></li>
+      <li><a href="#homelab"        data-nav>Home Lab</a></li>
+      <li><a href="#infra"          data-nav>Infrastructure</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="page">
+
+    <div class="proj-header">
+      <div class="proj-header-inner">
+        <div class="proj-eyebrow">// projects.travisteo.com</div>
+        <h1 class="proj-headline">Projects</h1>
+        <p class="proj-subhead">What I've built, what I contributed, and what I took away. Each project is a real exercise in applied security and development.</p>
+      </div>
+    </div>
+
+    <div class="projects-body">
+
+      <!-- ── PROJECT 1 ── -->
+      <div id="inquiry-helper" class="full-proj-card reveal">
+        <div class="fpcard-num">FEATURED / 001 · Security + Web</div>
+        <div class="fpcard-title">Inquiry Helper — WhatsApp Automation</div>
+        <div class="fpcard-sub">NYP Group Project · Oct 2025 – Feb 2026 · Team of 4</div>
+        <img src="https://via.placeholder.com/900x240/1e2035/7aa2f7?text=Inquiry+Helper" alt="Inquiry Helper project" class="fpcard-img expandable">
+        <div class="expand-hint">click to expand</div>
+
+        <div class="fpcard-section-label">The Problem</div>
+        <p class="fpcard-body">Small businesses handling WhatsApp inquiries manually were losing hours a day to repetitive questions — slow responses, frustrated customers, no way to scale support efficiently.</p>
+
+        <div class="fpcard-section-label">What We Built</div>
+        <p class="fpcard-body">An automated classification and response system. Incoming WhatsApp messages are categorised and answered automatically within 10 seconds, 24/7. A staff dashboard provides full visibility and control over conversations that escalate to human handling.</p>
+
+        <div class="fpcard-section-label">My Contribution — Account &amp; Security Management</div>
+        <ul class="fpcard-bullets">
+          <li>Designed and built the staff account management system with role-based access control (RBAC)</li>
+          <li>Built a Security Centre with full audit logging of every user action — timestamps, IP addresses, event types</li>
+          <li>Implemented automated account lockout after repeated failed login attempts to prevent brute-force attacks</li>
+          <li>Created an access reports dashboard for managers to review activity across all staff accounts</li>
+          <li>Applied OWASP session management principles — secure cookies, session expiry, CSRF-safe forms</li>
+        </ul>
+
+        <div class="fpcard-section-label">Key Learnings</div>
+        <p class="fpcard-body">Security and usability have to work together — building features strict enough to protect the system but seamless enough that staff don't find them frustrating. Taught me to debug real issues under pressure and think from the perspective of both a developer and an end user.</p>
+
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">Jinja</span>
+          <span class="tag">Session Management</span><span class="tag">Security Audits</span><span class="tag">HTML</span><span class="tag">CSS</span>
+          <span class="tag">wtforms</span><span class="tag">Bootstrap</span>
+        </div>
+        <div style="margin-top:16px;">
+          <a href="https://github.com/travisistaken" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size:10px;padding:8px 16px;">View on GitHub ↗</a>
+        </div>
+      </div>
+
+      <!-- ── PROJECT 2 ── -->
+      <div id="frisbee" class="full-proj-card reveal">
+        <div class="fpcard-num">PROJECT / 002 · Web Development</div>
+        <div class="fpcard-title">Ultimate Frisbee CCA Website</div>
+        <div class="fpcard-sub">NYP CCA Assignment · 2025</div>
+
+        <div class="fpcard-section-label">The Brief</div>
+        <p class="fpcard-body">The CCA needed an online presence — somewhere for current and prospective members to find schedule info, achievements, and club background. No budget, no CMS.</p>
+
+        <div class="fpcard-section-label">What I Built</div>
+        <ul class="fpcard-bullets">
+          <li>Static responsive multi-page website — Home, Achievements, Schedule, and About pages</li>
+          <li>Mobile-first layout — most students browse on phones, so responsiveness was a primary concern</li>
+          <li>Clean, readable design with no external dependencies beyond Bootstrap grid</li>
+        </ul>
+
+        <div class="fpcard-section-label">Key Learnings</div>
+        <p class="fpcard-body">Keeping things simple isn't easy. Resisting the urge to add unnecessary features and focusing on what the actual users need was the most important decision I made on this project.</p>
+
+        <div class="tag-row">
+          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+          <span class="tag">Responsive Design</span><span class="tag">Bootstrap</span>
+        </div>
+        <div style="margin-top:16px;">
+          <a href="https://github.com/travisistaken" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size:10px;padding:8px 16px;">View on GitHub ↗</a>
+        </div>
+      </div>
+
+      <!-- ── PROJECT 3 ── -->
+      <div id="homelab" class="full-proj-card reveal">
+        <div class="fpcard-num">PROJECT / 003 · Security</div>
+        <div class="fpcard-title">Security Home Lab</div>
+        <div class="fpcard-sub">Self-Directed · HackTheBox, TryHackMe &amp; OverTheWire · Ongoing</div>
+
+        <div class="fpcard-section-label">Platforms Used</div>
+        <ul class="fpcard-bullets">
+          <li><strong>HackTheBox</strong> — machine-based challenges for network enumeration, service discovery, and exploitation</li>
+          <li><strong>TryHackMe</strong> — guided learning paths for networking, Linux, and web security fundamentals</li>
+          <li><strong>OverTheWire Bandit</strong> — Linux fundamentals, file permissions, privilege escalation via wargames</li>
+        </ul>
+
+        <div class="fpcard-section-label">Skills Practised</div>
+        <ul class="fpcard-bullets">
+          <li>nmap for service and port discovery</li>
+          <li>Bash scripting for automation and enumeration</li>
+          <li>File permission analysis, SSH tunnelling, and setuid binary exploitation</li>
+          <li>Basic privilege escalation vectors on misconfigured Linux systems</li>
+        </ul>
+
+        <div class="fpcard-section-label">Why This Matters</div>
+        <p class="fpcard-body">Understanding why a vulnerability exists matters more than knowing how to exploit it. This perspective directly shaped how I wrote Nessus findings at ST Engineering — framing each issue as a real business risk, not just a checkbox. I document everything on <a href="https://writeups.travisteo.com" style="color:var(--accent);">writeups.travisteo.com</a>.</p>
+
+        <div class="tag-row">
+          <span class="tag">Linux</span><span class="tag">Bash</span><span class="tag">nmap</span>
+          <span class="tag">HackTheBox</span><span class="tag">TryHackMe</span><span class="tag">OverTheWire</span>
+        </div>
+        <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="https://profile.hackthebox.com/profile/019c8b17-61db-70e2-8b25-b19044df6342" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size:10px;padding:8px 16px;">HTB Profile ↗</a>
+          <a href="https://tryhackme.com/p/travisteo" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size:10px;padding:8px 16px;">THM Profile ↗</a>
+        </div>
+      </div>
+
+      <!-- ── PROJECT 4 ── -->
+      <div id="infra" class="full-proj-card reveal">
+        <div class="fpcard-num">PROJECT / 004 · Infrastructure</div>
+        <div class="fpcard-title">Personal Domain &amp; Infrastructure</div>
+        <div class="fpcard-sub">Self-Directed · 2025 – Present</div>
+
+        <div class="fpcard-section-label">What I Built</div>
+        <ul class="fpcard-bullets">
+          <li>Registered travisteo.com through Exabytes Singapore</li>
+          <li>Configured Cloudflare as a reverse proxy with DNSSEC enabled and SSL/TLS Full (Strict) mode</li>
+          <li>Created and managed DNS records for six subdomains pointing to GitHub Pages repositories</li>
+          <li>Set up email forwarding — contact@travisteo.com routes to my main Gmail without running a mail server</li>
+          <li>Each subdomain is a separate GitHub Pages repo, allowing independent deployments</li>
+        </ul>
+
+        <div class="fpcard-section-label">Subdomains Deployed</div>
+        <p class="fpcard-body">travisteo.com · portfolio.travisteo.com · projects.travisteo.com · resume.travisteo.com · writeups.travisteo.com · contact.travisteo.com</p>
+
+        <div class="fpcard-section-label">Key Learnings</div>
+        <p class="fpcard-body">Practical DNS management, DNSSEC concepts, SSL/TLS configuration, and Cloudflare proxying to protect origin IPs. Applied security hardening principles from my ST Engineering internship to my own infrastructure.</p>
+
+        <div class="tag-row">
+          <span class="tag">DNS</span><span class="tag">DNSSEC</span><span class="tag">SSL/TLS</span>
+          <span class="tag">Cloudflare</span><span class="tag">GitHub Pages</span><span class="tag">Infrastructure</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- /page -->
+
+  <footer class="main-footer">
+    <div class="footer-row">
+      <span style="font-weight:700;color:var(--accent);">Travis Teo</span>
+      <span class="footer-sep">—</span><span class="year"></span>
+      <span class="footer-sep">·</span><span style="color:var(--muted);">Singapore</span>
+    </div>
+    <div class="footer-sub">projects.travisteo.com</div>
+  </footer>
+
+  <button class="go-top" id="go-top" aria-label="Back to top">↑</button>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-x">✕</div>
+    <img id="lb-img" src="" alt="">
+  </div>
+
+  <script src="js/shared.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
